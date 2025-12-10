@@ -1,7 +1,7 @@
 import { Input, Button } from "antd";
 import { EditOutlined, LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
 
-export function Register(){
+export function Register({onSwitch}:{onSwitch:()=>void}){
     return(
         <>
         <div>
@@ -11,7 +11,8 @@ export function Register(){
             <Input size="large" placeholder="请输入用户名" prefix={<UserOutlined/>} style={{position:"relative", bottom:72}}/>
             <Input size="large" placeholder="请输入密码" prefix={<LockOutlined />} style={{position:"relative", bottom:42}}/>
             <Input size="large" placeholder="请输入邮箱" prefix={<MailOutlined />} style={{position:"relative", bottom:12}}/>
-            <Button type="primary" size="large" style={{width:128, position:"relative", top:32}}>注册</Button>
+            <Button onClick={onSwitch} type="primary" size="large" style={{width:128, position:"relative", top:32, right:32}}>注册</Button>
+            <Button onClick={onSwitch} size="large" style={{backgroundColor:"lightgrey", width:128, position:"relative", top:32, left:32}}>返回登陆</Button>
         </form>
         </>
     )
